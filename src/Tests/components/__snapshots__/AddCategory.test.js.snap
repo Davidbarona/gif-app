@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testo on AddCategory Component should render AddCategory Correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <p />
+  <input
+    input=""
+    onChange={[Function]}
+    type="text"
+  />
+</form>
+`;
