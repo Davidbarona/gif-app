@@ -1,10 +1,18 @@
+
+import React from 'react'
+import '@testing-library/jest-dom'
 import {shallow} from 'enzyme'
 import { AddCategory } from '../../components/AddCategory'
 
 
 describe("Testo on AddCategory Component",()=>{
-    const setCategories = () =>{}
-    const wrapper = shallow(<AddCategory setCategories={setCategories} />)
+    const setCategories = jest.fn()
+    let wrapper
+
+    beforeEach(()=>{
+        jest.clearAllMocks();
+        wrapper = shallow(<AddCategory setCategories={setCategories} />)
+    })
 
     test('should render AddCategory Correctly', () => {
         expect(wrapper).toMatchSnapshot()
@@ -20,6 +28,14 @@ describe("Testo on AddCategory Component",()=>{
 
         expect(wrapper.find('p').text().trim()).toBe(value)
        
+    })
+
+    test('no must of public the information with subtmit ', () => {
+
+        wrapper.find('form').simulate('submit',{preventDefault(){}})
+
+        expect(setCategories).not.toHaveBeenCalled()
+
     })
 
 
