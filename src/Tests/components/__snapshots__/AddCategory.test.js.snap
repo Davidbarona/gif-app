@@ -6,9 +6,9 @@ exports[`Testo on AddCategory Component should render AddCategory Correctly 1`] 
 >
   <p />
   <input
-    input=""
     onChange={[Function]}
     type="text"
+    value=""
   />
 </form>
 `;

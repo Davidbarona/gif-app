@@ -38,6 +38,24 @@ describe("Testo on AddCategory Component",()=>{
 
     })
 
+    test('should call the setCategories component and must clena the text box ', () => { 
+       const value = 'hello world'
+       
+       // simulate the inputchange
+        wrapper.find('input').simulate('change',{ target:{value}})
+
+       // simulate te submit
+        wrapper.find('form').simulate('submit',{ preventDefault(){}})
+    
+      // setCategories must be called 
+    
+        expect(setCategories).toHaveBeenCalled()
+        expect(setCategories).toHaveBeenCalledTimes(1)
+        expect(setCategories).toHaveBeenCalledWith(expect.any(Function))
+     // the input value must be empty 
+        expect(wrapper.find('input').prop('value')).toBe('')
+    
+     })
 
 
 })
